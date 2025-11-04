@@ -14,7 +14,7 @@ switch($branch){
         $base_datos = 'practicas_production';
         break;
     default:
-        $base_datos = 'practicas_server'; // Por seguridad, usar server por defecto
+        $base_datos = 'practicas_server'; // server por defecto
 }
 
 // Datos de conexión
