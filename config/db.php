@@ -18,6 +18,7 @@ switch($branch){
 }
 
 // Datos de conexión
+//mini prueba
 $host = "localhost";
 $usuario = "root";
 $password = "";
