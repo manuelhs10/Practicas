@@ -1,0 +1,96 @@
+/* ===== Estilos generales ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Contenedor del formulario ===== */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+form {
+    background-color: #fff;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Estructura de los campos ===== */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background-color: #fafafa;
+}
+
+legend {
+    font-weight: bold;
+    color: #222;
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+/* ===== Botón ===== */
+button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* ===== Errores (por si luego agregamos validación) ===== */
+.errores {
+    max-width: 700px;
+    margin: 15px auto;
+    background-color: #ffecec;
+    border: 1px solid #f5c2c2;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #b20000;
+}
+
+.errores ul {
+    list-style: disc;
+    margin-left: 20px;
+}
