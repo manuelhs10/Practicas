@@ -25,7 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $modelo->guardar($datos);
 
     echo "Datos guardados correctamente";
-    echo "<a href='../vista/form_empresa.php'>Volver al formulario</a></p>";
+    echo "<a href='../vistas/form_empresa.php'>Volver al formulario</a>";
+
+
     exit;
 }
 ?>
