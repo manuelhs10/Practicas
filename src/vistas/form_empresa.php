@@ -9,7 +9,7 @@
 <body>
     <h1>Registro de Empresa de Prácticas</h1>
 
-    <!-- El formulario enviará los datos al controlador "empresa" y ejecutará la acción "guardar" -->
+    <!--Formulario-->
     <form action="../controladores/EmpresaControlador.php" method="POST">
 
 
