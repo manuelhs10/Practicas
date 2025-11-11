@@ -24,8 +24,8 @@
 
             <label>CIF / NIF:</label>
             <input type="text" name="cif_nif" maxlength="9" required>
+       
         </fieldset>
-
         <fieldset>
             <legend>Responsable de la Empresa</legend>
 
@@ -65,7 +65,8 @@
             <input type="text" name="direccion" required>
 
             <label>Horario (número de horas de L-V):</label>
-            <input type="number" name="horario" min="0" required>
+            <input type="number" name="horario" min="0" step="0.01" required>
+
 
             <label>¿Recibe compensación económica?</label>
             <select name="compensacion" required>
