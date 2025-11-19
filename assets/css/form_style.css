@@ -94,3 +94,13 @@ button:hover {
     list-style: disc;
     margin-left: 20px;
 }
+
+.fila-horario {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-hora {
+    width: 50px;
+}

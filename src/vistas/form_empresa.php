@@ -59,21 +59,49 @@
         </fieldset>
 
         <fieldset>
+        <fieldset>
             <legend>Datos de la Práctica</legend>
 
             <label>Dirección:</label>
             <input type="text" name="direccion" required>
 
-            <label>Horario (número de horas de L-V):</label>
-            <input type="number" name="horario" min="0" step="0.01" required>
+            <label>Horario (horas por día):</label>
 
+            <div class="fila-horario">
+
+                <label>Lun:</label>
+                <input type="number" name="lunes" min="0" step="0.5" class="input-hora">
+
+                <label>Mar:</label>
+                <input type="number" name="martes" min="0" step="0.5" class="input-hora">
+
+                <label>Mié:</label>
+                <input type="number" name="miercoles" min="0" step="0.5" class="input-hora">
+
+                <label>Jue:</label>
+                <input type="number" name="jueves" min="0" step="0.5" class="input-hora">
+
+                <label>Vie:</label>
+                <input type="number" name="viernes" min="0" step="0.5" class="input-hora">
+
+                
+            </div>
 
             <label>¿Recibe compensación económica?</label>
-            <select name="compensacion" required>
+            <select name="compensacion" id="compensacion">
                 <option value="no">No</option>
                 <option value="si">Sí</option>
             </select>
+
+            <!-- Campo que se mostrará solo cuando elijan "sí" -->
+            <div id="cantidadContainer" style="display: none; margin-top: 10px;">
+                <label>Cantidad mensual (€):</label>
+                <input type="number" name="cantidad_mensual" min="0" step="0.01">
+            </div>
         </fieldset>
+
+
+
 
         <button type="submit">Guardar</button>
     </form>
