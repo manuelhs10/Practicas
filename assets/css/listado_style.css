@@ -1,0 +1,36 @@
+/* Tabla centrada y con bordes */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #0077cc;
+    color: white;
+}
+
+/* Título centrado */
+h1 {
+    text-align: center;
+}
+
+/* Enlace volver al inicio */
+a.volver {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+a.volver:hover {
+    color: #005fa3;
+}
