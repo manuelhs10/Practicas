@@ -93,8 +93,7 @@
                 <option value="si">Sí</option>
             </select>
 
-            <!-- Campo que se mostrará solo cuando elijan "sí" -->
-            <div id="cantidadContainer" style="display: none; margin-top: 10px;">
+            <div id="cantidadContainer" class="cantidad">
                 <label>Cantidad mensual (€):</label>
                 <input type="number" name="cantidad_mensual" min="0" step="0.01">
             </div>
@@ -105,5 +104,8 @@
 
         <button type="submit">Guardar</button>
     </form>
+
+    <script src="../../assets/js/script.js"></script>
+
 </body>
 </html>

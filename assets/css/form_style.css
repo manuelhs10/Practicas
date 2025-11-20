@@ -104,3 +104,11 @@ button:hover {
 .input-hora {
     width: 50px;
 }
+
+#cantidadContainer {
+    margin-top: 10px;
+}
+
+.cantidad {
+    display: none;
+}

@@ -7,7 +7,8 @@ class EmpresaModelo {
     }
 
     public function guardar($datos) {
-        // Calculamos el total de horas antes de insertar
+
+        // Calculamos el total
         $datos['total'] = 
             ($datos['lunes'] ?? 0) +
             ($datos['martes'] ?? 0) +
@@ -15,24 +16,26 @@ class EmpresaModelo {
             ($datos['jueves'] ?? 0) +
             ($datos['viernes'] ?? 0);
 
-        // Consulta SQL
+        // Si NO recibe compensación → la cantidad debe ser NULL
+        if ($datos['compensacion'] === 'no') {
+            $datos['cantidad_mensual'] = NULL;
+        }
+
         $sql = "INSERT INTO empresas_practicas (
                     razon_social, nombre_empresa, cif_nif,
                     resp_nombre, resp_apellido, resp_dni, resp_email,
                     tutor_nombre, tutor_apellido, tutor_dni, tutor_email,
                     direccion, lunes, martes, miercoles, jueves, viernes,
-                    total, compensacion
+                    total, compensacion, cantidad_mensual
                 ) VALUES (
                     :razon_social, :nombre_empresa, :cif_nif,
                     :resp_nombre, :resp_apellido, :resp_dni, :resp_email,
                     :tutor_nombre, :tutor_apellido, :tutor_dni, :tutor_email,
                     :direccion, :lunes, :martes, :miercoles, :jueves, :viernes,
-                    :total, :compensacion
+                    :total, :compensacion, :cantidad_mensual
                 )";
 
         $stmt = $this->conexion->prepare($sql);
-
-        // Ejecutamos con los datos
         $stmt->execute($datos);
     }
 }
