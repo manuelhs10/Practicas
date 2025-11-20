@@ -13,8 +13,8 @@
         <h1>Prácticas ALTAIR CSIF</h1>
 
         <div class="botones">
-            <a href="vistas/formulario_empresa.php" class="btn">Dar de Alta</a>
-            <a href="vistas/listado_practicas.php" class="btn">Listado Prácticas</a>
+            <a href="src/vistas/form_alta.php" class="btn">Dar de Alta</a>
+            <a href="src/vistas/listado_practicas.php" class="btn">Listado Prácticas</a>
         </div>
 
     </div>
