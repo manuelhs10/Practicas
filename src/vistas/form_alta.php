@@ -9,8 +9,8 @@
 <body>
     <h1>Registro de Empresa de Prácticas</h1>
 
-    <!--Formulario-->
-    <form action="../controladores/alta_controlador.php" method="POST">
+    <!--Formulario aqui cambiamos-->
+    <form action="../controladores/EmpresaAltaControlador.php" method="POST">
 
 
         

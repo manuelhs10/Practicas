@@ -17,12 +17,5 @@ class AltaModelo {
         $stmt->execute($datos);
     }
 
-    // Obtener todos los registros
-    public function obtenerEmpresas() {
-        $sql = "SELECT * FROM alta_practicas ORDER BY id DESC";
-        $stmt = $this->conexion->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
 }
 

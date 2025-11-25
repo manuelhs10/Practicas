@@ -6,8 +6,8 @@ class EmpresaModelo {
         $this->conexion = $conexion;
     }
 
+    // Guardar datos de la empresa
     public function guardar($datos) {
-
         // Calculamos el total
         $datos['total'] = 
             ($datos['lunes'] ?? 0) +
@@ -38,4 +38,13 @@ class EmpresaModelo {
         $stmt = $this->conexion->prepare($sql);
         $stmt->execute($datos);
     }
+
+    // Obtener todos los registros
+    public function obtenerEmpresas() {
+        $sql = "SELECT * FROM empresas_practicas ORDER BY id DESC";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
+

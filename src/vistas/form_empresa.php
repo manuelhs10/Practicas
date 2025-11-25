@@ -59,7 +59,6 @@
         </fieldset>
 
         <fieldset>
-        <fieldset>
             <legend>Datos de la Práctica</legend>
 
             <label>Dirección:</label>
