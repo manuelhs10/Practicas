@@ -15,6 +15,7 @@
         <div class="botones">
             <a href="src/vistas/form_alta.php" class="btn">Dar de Alta</a>
             <a href="src/vistas/listado_practicas.php" class="btn">Listado Prácticas</a>
+            <a href="src/vistas/historico_practicas.php" class="btn">Histórico de Prácticas</a>
         </div>
 
     </div>

@@ -1,11 +1,11 @@
 <?php
 require_once "../../config/db.php";
 require_once "../modelos/alta_modelo.php";
-require_once "../../libs/PHPMAILER/src/PHPMailer.php";
-require_once "../../libs/PHPMAILER/src/SMTP.php";
-require_once "../../libs/PHPMAILER/src/Exception.php";
+require_once "../../libs/PHPMAILER/src/PHPMailer.php"; //clase principal
+require_once "../../libs/PHPMAILER/src/SMTP.php"; //maneja smtp 
+require_once "../../libs/PHPMAILER/src/Exception.php"; //maneja errores
 
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer; //usa las clses 
 use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,26 +14,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $datos = [
         'emp_nombre' => $_POST['emp_nombre'],
         'ciclo' => $_POST['ciclo'],
-        'emp_email' => $_POST['emp_email']
+        'emp_email' => $_POST['emp_email'],
+        'curso_escolar' => $_POST['curso_escolar'] 
     ];
 
-    // Guardar en BD
     $alta->guardar($datos);
 
-    // Crear PHPMailer
+    
     $mail = new PHPMailer(true);
 
     try {
-        // Configuración SMTP
-        $mail->isSMTP();
-        $mail->Host = "sandbox.smtp.mailtrap.io";
-        $mail->SMTPAuth = true;
-        $mail->Username = "3f20820cbba5cd";
+        
+        $mail->isSMTP(); //se conecta al servidor smtp
+        $mail->Host = "sandbox.smtp.mailtrap.io"; // servidor mailtrap 
+        $mail->SMTPAuth = true; //autenticacion
+        $mail->Username = "3f20820cbba5cd"; //credenciales 
         $mail->Password = "427cb326941782";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 2525;
+        $mail->Port = 2525; //port
 
-        $mail->setFrom("TU_CORREO@gmail.com", "Altair Prácticas");
+        $mail->setFrom("CORREO@gmail.com", "Altair Prácticas"); //datos de envio de correo
         $mail->addAddress($datos['emp_email'], $datos['emp_nombre']);
 
         $mail->isHTML(true);

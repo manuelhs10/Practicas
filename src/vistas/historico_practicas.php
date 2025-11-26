@@ -3,19 +3,19 @@ require_once "../../config/db.php";
 require_once "../modelos/EmpresaModelo.php";
 
 $modelo = new EmpresaModelo($conexion);
-$registros = $modelo->obtenerEmpresas(); // Filtra solo el curso escolar actual
+// Traer todos los registros históricos
+$registros = $modelo->obtenerEmpresasHistorico();
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Listado de Prácticas</title>
+    <title>Histórico de Prácticas</title>
     <link rel="stylesheet" href="../../assets/css/listado_style.css">
 </head>
 <body>
-
-<h1>Listado de Prácticas (Curso Actual)</h1>
+<h1>Histórico de Prácticas</h1>
 
 <table>
     <tr>
@@ -28,17 +28,10 @@ $registros = $modelo->obtenerEmpresas(); // Filtra solo el curso escolar actual
         <th>Tutor</th>
         <th>Correo Tutor</th>
         <th>Dirección</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Total</th>
-        <th>Compensación</th>
-        <th>Cantidad mensual</th>
         <th>Ciclo</th>
         <th>Inicio Curso</th>
         <th>Fin Curso</th>
+        <th>Acciones</th>
     </tr>
     <?php foreach($registros as $r): ?>
     <tr>
@@ -51,22 +44,18 @@ $registros = $modelo->obtenerEmpresas(); // Filtra solo el curso escolar actual
         <td><?= htmlspecialchars($r['tutor_nombre'] . ' ' . $r['tutor_apellido']) ?></td>
         <td><?= htmlspecialchars($r['tutor_email']) ?></td>
         <td><?= htmlspecialchars($r['direccion']) ?></td>
-        <td><?= htmlspecialchars($r['lunes']) ?></td>
-        <td><?= htmlspecialchars($r['martes']) ?></td>
-        <td><?= htmlspecialchars($r['miercoles']) ?></td>
-        <td><?= htmlspecialchars($r['jueves']) ?></td>
-        <td><?= htmlspecialchars($r['viernes']) ?></td>
-        <td><?= htmlspecialchars($r['total']) ?></td>
-        <td><?= htmlspecialchars($r['compensacion']) ?></td>
-        <td><?= htmlspecialchars($r['cantidad_mensual']) ?></td>
         <td><?= htmlspecialchars($r['ciclo']) ?></td>
         <td><?= htmlspecialchars($r['inicio_curso']) ?></td>
         <td><?= htmlspecialchars($r['fin_curso']) ?></td>
+        <td>
+            <a href="../controladores/historico_controlador.php?accion=editar&id=<?= $r['id'] ?>">Editar</a> |
+            <a href="../controladores/historico_controlador.php?accion=eliminar&id=<?= $r['id'] ?>" 
+               onclick="return confirm('¿Seguro que deseas eliminar este registro?');">Eliminar</a>
+        </td>
     </tr>
     <?php endforeach; ?>
 </table>
 
 <a href="../../index.php">Volver al inicio</a>
-
 </body>
 </html>

@@ -9,7 +9,6 @@
 <body>
     <h1>Registro de Empresa de Prácticas</h1>
 
-    <!--Formulario aqui cambiamos-->
     <form action="../controladores/EmpresaAltaControlador.php" method="POST">
 
 
@@ -26,10 +25,27 @@
                 <option value="CMI2">CMI2</option>
                 <option value="CSI1">CSI1</option>
                 <option value="CSI2">CSI2</option>
+                <option value="CMI1YCMI2">CMI1 y CMI2</option>
+                <option value="CSI1YCSI2">CSI1 y CSI2</option>
             </select>
             
             <label>Correo electrónico:</label>
             <input type="email" name="emp_email" required>
+
+            <label>Curso Escolar:</label>
+            <select name="curso_escolar" required>
+            <?php
+                $inicioBase = 2025; // primer año fijo
+                $cantidad = 15;     // cantidad de cursos a generar
+
+                for ($i = 0; $i < $cantidad; $i++) {
+                $inicio = $inicioBase + $i;
+                $fin = $inicio + 1;
+                echo "<option value='$inicio-$fin'>$inicio - $fin</option>";
+                }
+            ?>
+</select>
+
     </fieldset>
 
         <button type="submit">Guardar</button>
