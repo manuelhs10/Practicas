@@ -41,13 +41,13 @@ class EmpresaModelo {
         $stmt->execute($datos);
     }
 
-    // Obtener todos los registros del año escolar actual automáticamente
+    // Obtener empresa año actual
     public function obtenerEmpresas() {
         $hoy = date('Y-m-d');
         $anio = date('Y');
         $mes = date('m');
 
-        if ($mes >= 9) { // Septiembre o posterior
+        if ($mes >= 9) { // Septiembre o mas
             $inicio_curso_actual = "$anio-09-01";
             $fin_curso_actual = ($anio + 1) . "-08-31";
         } else { // Antes de septiembre

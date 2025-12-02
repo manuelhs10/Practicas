@@ -25,19 +25,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         
-        $mail->isSMTP(); //se conecta al servidor smtp
-        $mail->Host = "sandbox.smtp.mailtrap.io"; // servidor mailtrap 
-        $mail->SMTPAuth = true; //autenticacion
-        $mail->Username = "3f20820cbba5cd"; //credenciales 
-        $mail->Password = "427cb326941782";
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "practicasaltair123@gmail.com";
+        $mail->Password = "bewxttblqjyqjkal";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 2525; //port
+        $mail->Port = 587;
 
-        $mail->setFrom("CORREO@gmail.com", "Altair Prácticas"); //datos de envio de correo
+        $mail->setFrom("practicasaltair123@gmail.com", "Altair Prácticas");
         $mail->addAddress($datos['emp_email'], $datos['emp_nombre']);
 
         $mail->isHTML(true);
-        $mail->Subject = "Formulario de Prácticas - ALTAIR CSIF";
+        $mail->Subject = "Formulario de Practicas - ALTAIR CSIF";
         $mail->Body = "
             Hola <b>{$datos['emp_nombre']}</b>,<br><br>
             Por favor, complete el formulario completo de prácticas:<br>

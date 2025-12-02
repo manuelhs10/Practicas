@@ -34,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'cantidad_mensual' => $_POST['cantidad_mensual'] ?? null,
 
     'ciclo' => $_POST['ciclo'],
-    'inicio_curso' => $_POST['inicio_curso'],  // <-- aquí
-    'fin_curso'    => $_POST['fin_curso']      // <-- y aquí
+    'inicio_curso' => $_POST['inicio_curso'],  
+    'fin_curso'    => $_POST['fin_curso']      
 ];
 
 

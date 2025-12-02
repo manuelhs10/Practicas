@@ -4,7 +4,7 @@ require_once "../modelos/EmpresaModelo.php";
 
 $modelo = new EmpresaModelo($conexion);
 
-// -------------------- ELIMINAR --------------------
+// eliminar
 if (isset($_GET['accion']) && $_GET['accion'] === 'eliminar' && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
     $modelo->eliminar($id);
@@ -12,13 +12,13 @@ if (isset($_GET['accion']) && $_GET['accion'] === 'eliminar' && isset($_GET['id'
     exit;
 }
 
-// -------------------- EDITAR --------------------
+// editar
 if (isset($_GET['accion']) && $_GET['accion'] === 'editar' && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
     $registro = $modelo->obtenerPorId($id);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Guardar cambios
+        //  cambios
         $datos = [
             'id' => $id,
             'razon_social' => $_POST['razon_social'],
@@ -41,11 +41,11 @@ if (isset($_GET['accion']) && $_GET['accion'] === 'editar' && isset($_GET['id'])
         exit;
     }
 
-    // Mostrar formulario de edición
+    // Mostrar formulario edición
     include "../vistas/historico_editar.php";
     exit;
 }
 
-// -------------------- LISTAR HISTÓRICO --------------------
+// historico
 $registros = $modelo->obtenerEmpresasHistorico();
 include "../vistas/historico_practicas.php";

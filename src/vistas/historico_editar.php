@@ -1,5 +1,5 @@
 <?php
-// Asegúrate de que $registro está definido antes de incluir este archivo
+// registro definido
 if (!isset($registro)) {
     echo "Registro no encontrado.";
     exit;
