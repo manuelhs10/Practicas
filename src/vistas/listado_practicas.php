@@ -3,7 +3,7 @@ require_once "../../config/db.php";
 require_once "../modelos/EmpresaModelo.php";
 
 $modelo = new EmpresaModelo($conexion);
-$registros = $modelo->obtenerEmpresas(); // Filtra solo el curso escolar actual
+$registros = $modelo->obtenerEmpresas(); // curso escolar actual
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,8 @@ $registros = $modelo->obtenerEmpresas(); // Filtra solo el curso escolar actual
 </head>
 <body>
 
-<h1>Listado de Prácticas (Curso Actual)</h1>
+<h1 class="titulo-con-logo">Listado de Prácticas (Curso Actual)</h1>
+
 
 <table>
     <tr>
@@ -67,6 +68,10 @@ $registros = $modelo->obtenerEmpresas(); // Filtra solo el curso escolar actual
 </table>
 
 <a href="../../index.php">Volver al inicio</a>
+<a href="../pdf/listado_pdf.php" target="_blank">
+    <button>📄 Exportar PDF</button>
+</a>
+
 
 </body>
 </html>

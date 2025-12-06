@@ -15,7 +15,7 @@ $registros = $modelo->obtenerEmpresasHistorico();
     <link rel="stylesheet" href="../../assets/css/listado_style.css">
 </head>
 <body>
-<h1>Histórico de Prácticas</h1>
+<h1 class="titulo-con-logo">Listado de Prácticas (Curso Actual)</h1>
 
 <table>
     <tr>
@@ -57,5 +57,9 @@ $registros = $modelo->obtenerEmpresasHistorico();
 </table>
 
 <a href="../../index.php">Volver al inicio</a>
+<a href="../pdf/historico_pdf.php" target="_blank">
+    <button>📄 Exportar Histórico PDF</button>
+</a>
+
 </body>
 </html>
