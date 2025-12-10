@@ -4,28 +4,48 @@ require_once "../../libs/dompdf/autoload.inc.php";
 
 use Dompdf\Dompdf;
 
+// Crear instancia de Dompdf
 $dompdf = new Dompdf();
 
+// Obtener datos del modelo
 require_once "../modelos/EmpresaModelo.php";
 $modelo = new EmpresaModelo($conexion);
 $empresas = $modelo->obtenerEmpresasHistorico(); // TODAS
 
+$css = file_get_contents("../../assets/css/pdf_style.css");
+
+// Generar HTML
 $html = "
+
+<style>$css</style>
+
 <h1>Histórico de Empresas de Prácticas</h1>
-<table border='1' cellpadding='5' cellspacing='0' width='100%'>
+<table>
 <tr>
     <th>ID</th>
-    <th>Empresa</th>
+    <th>Razón Social</th>
+    <th>Cif/Nif</th>
+    <th>Responsable</th>
+    <th>Correo Responsable</th>
+    <th>Tutor</th>
+    <th>Correo Tutor</th>
+    <th>Dirección</th>
     <th>Ciclo</th>
-    <th>Inicio</th>
-    <th>Fin</th>
+    <th>Inicio Curso</th>
+    <th>Fin Curso</th>
 </tr>";
 
 foreach ($empresas as $e) {
     $html .= "
     <tr>
         <td>{$e['id']}</td>
-        <td>{$e['nombre_empresa']}</td>
+        <td>{$e['razon_social']}</td>
+        <td>{$e['cif_nif']}</td>
+        <td>{$e['resp_nombre']}</td>
+        <td class='email'>{$e['resp_email']}</td>
+        <td>{$e['tutor_nombre']}</td>
+        <td class='email'>{$e['tutor_email']}</td>
+        <td>{$e['direccion']}</td>
         <td>{$e['ciclo']}</td>
         <td>{$e['inicio_curso']}</td>
         <td>{$e['fin_curso']}</td>
@@ -34,8 +54,12 @@ foreach ($empresas as $e) {
 
 $html .= "</table>";
 
+// Cargar HTML a Dompdf
 $dompdf->loadHtml($html);
-$dompdf->setPaper("A4", "portrait");
+// Establecer el tamaño y la orientación del papel (A4, vertical/portrait)
+$dompdf->setPaper("A4", "landscape");
+// Renderizar el PDF
 $dompdf->render();
 
+// Descargar PDF
 $dompdf->stream("historico_practicas.pdf", ["Attachment" => true]);

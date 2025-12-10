@@ -14,8 +14,12 @@ $registros = $modelo->obtenerEmpresas(); // curso escolar actual
     <link rel="stylesheet" href="../../assets/css/listado_style.css">
 </head>
 <body>
+<div class="titulo-con-logo">
+    <h1>Listado de Prácticas (Curso Actual)</h1>
+    <img src="../../assets/img/logo.png" alt="Logo">
+</div>
 
-<h1 class="titulo-con-logo">Listado de Prácticas (Curso Actual)</h1>
+
 
 
 <table>

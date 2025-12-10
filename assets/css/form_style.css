@@ -7,6 +7,7 @@ body {
 }
 
 /* ===== Contenedor del formulario ===== */
+
 h1 {
     text-align: center;
     color: #333;
@@ -79,7 +80,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* ===== Errores (por si luego agregamos validación) ===== */
+/* ===== Mensajes de error ===== */
 .errores {
     max-width: 700px;
     margin: 15px auto;
@@ -113,6 +114,7 @@ button:hover {
     display: none;
 }
 
+/* ===== LOGO DE FONDO TRANSPARENTE ===== */
 body::before {
     content: "";
     position: fixed;
@@ -120,10 +122,29 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/logo.png');
+    background-image: url('../img/logo.png'); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: 35%;
     opacity: 0.08;
     z-index: -1;
+}
+
+/* ===== TÍTULO + LOGO AL LADO ===== */
+.titulo-con-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.titulo-con-logo h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.titulo-con-logo img {
+    height: 32px;
+    width: auto;
 }

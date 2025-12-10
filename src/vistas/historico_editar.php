@@ -75,5 +75,17 @@ if (!isset($registro)) {
         <button type="submit">Guardar Cambios</button>
         <a href="../controladores/historico_controlador.php">Cancelar</a>
     </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(e) {
+            let inicio = document.querySelector("input[name='inicio_curso']").value;
+            let fin = document.querySelector("input[name='fin_curso']").value;
+
+            if (inicio && fin && fin < inicio) {
+                e.preventDefault(); // NO ENVÍA EL FORMULARIO
+                alert(" La fecha de FIN no puede ser anterior a la fecha de INICIO.");
+            }
+        });
+</script>
+
 </body>
 </html>

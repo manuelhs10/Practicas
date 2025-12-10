@@ -7,7 +7,11 @@
 
 </head>
 <body>
-    <h1>Registro de Empresa de Prácticas</h1>
+    <div class="titulo-con-logo">
+    <h1>Registro de Prácticas</h1>
+    <img src="../../assets/img/logo.png" alt="Logo">
+</div>
+
 
     <form action="../controladores/EmpresaAltaControlador.php" method="POST">
 

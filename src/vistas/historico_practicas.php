@@ -15,7 +15,10 @@ $registros = $modelo->obtenerEmpresasHistorico();
     <link rel="stylesheet" href="../../assets/css/listado_style.css">
 </head>
 <body>
-<h1 class="titulo-con-logo">Listado de Prácticas (Curso Actual)</h1>
+<div class="titulo-con-logo">
+    <h1>Histórico de Prácticas </h1>
+    <img src="../../assets/img/logo.png" alt="Logo">
+</div>
 
 <table>
     <tr>
