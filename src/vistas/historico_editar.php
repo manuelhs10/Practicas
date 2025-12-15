@@ -1,5 +1,5 @@
 <?php
-// registro definido
+
 if (!isset($registro)) {
     echo "Registro no encontrado.";
     exit;

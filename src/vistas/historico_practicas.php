@@ -3,7 +3,6 @@ require_once "../../config/db.php";
 require_once "../modelos/EmpresaModelo.php";
 
 $modelo = new EmpresaModelo($conexion);
-// Traer todos los registros históricos
 $registros = $modelo->obtenerEmpresasHistorico();
 ?>
 

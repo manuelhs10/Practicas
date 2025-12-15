@@ -12,10 +12,8 @@ require_once "../modelos/EmpresaModelo.php";
 $modelo = new EmpresaModelo($conexion);
 $empresas = $modelo->obtenerEmpresas(); // SOLO ACTUALES
 
-// Cargar CSS externo
 $css = file_get_contents("../../assets/css/pdf_style.css");
 
-// Generar HTML
 $html = "
 <style>$css</style>
 

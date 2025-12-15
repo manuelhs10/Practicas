@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Guardar en la base de datos
     $modelo->guardar($datos);
 
-    // Redirigir a la vista bonita de éxito
+    // Redirigir a exito
     header("Location: ../vistas/alta_exitoCliente.php");
     exit;
 }

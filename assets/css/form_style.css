@@ -1,4 +1,4 @@
-/* ===== Estilos generales ===== */
+/*Estilos generales*/
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f6f8;
@@ -6,7 +6,7 @@ body {
     padding: 0;
 }
 
-/* ===== Contenedor del formulario ===== */
+/*Contenedor del formulario */
 
 h1 {
     text-align: center;
@@ -23,7 +23,7 @@ form {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Estructura de los campos ===== */
+/*Estructura de los campos*/
 fieldset {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -62,7 +62,6 @@ select:focus {
     outline: none;
 }
 
-/* ===== Botón ===== */
 button {
     display: block;
     width: 100%;
@@ -80,7 +79,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* ===== Mensajes de error ===== */
 .errores {
     max-width: 700px;
     margin: 15px auto;
@@ -114,7 +112,7 @@ button:hover {
     display: none;
 }
 
-/* ===== LOGO DE FONDO TRANSPARENTE ===== */
+/* LOGO DE FONDO TRANSPARENTE */
 body::before {
     content: "";
     position: fixed;
@@ -130,7 +128,7 @@ body::before {
     z-index: -1;
 }
 
-/* ===== TÍTULO + LOGO AL LADO ===== */
+/* TÍTULO + LOGO AL LADO */
 .titulo-con-logo {
     display: flex;
     justify-content: center;

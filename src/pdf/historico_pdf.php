@@ -14,7 +14,6 @@ $empresas = $modelo->obtenerEmpresasHistorico(); // TODAS
 
 $css = file_get_contents("../../assets/css/pdf_style.css");
 
-// Generar HTML
 $html = "
 
 <style>$css</style>

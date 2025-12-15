@@ -12,7 +12,6 @@ use Dompdf\Dompdf;
 try {
     $dompdf = new Dompdf();
 
-    // HTML mínimo de prueba
     $html = "<!doctype html><html><body><h1>Hola PDF test</h1><p>Prueba dompdf</p></body></html>";
 
     // guardar también el html de debug

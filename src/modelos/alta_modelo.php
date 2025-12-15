@@ -6,7 +6,6 @@ class AltaModelo {
         $this->conexion = $conexion;
     }
 
-    // Guardar un registro
     public function guardar($datos) {
         $sql = "INSERT INTO alta_practicas (emp_nombre, ciclo, emp_email, curso_escolar)
         VALUES (:emp_nombre, :ciclo, :emp_email, :curso_escolar)";

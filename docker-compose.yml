@@ -1,0 +1,42 @@
+services:
+
+  apache:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: practicas_apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: practicas_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: practicas
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: usuario123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: practicas_phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql           # Deja solo el host, ya que es lo único que necesita para encontrar la BD
+      # Eliminadas las líneas PMA_USER y PMA_PASSWORD para forzar el inicio de sesión manual
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:

@@ -6,9 +6,8 @@ class EmpresaModelo {
         $this->conexion = $conexion;
     }
 
-    // Guardar datos de la empresa
     public function guardar($datos) {
-        // Calculamos el total de horas
+        // horas total
         $datos['total'] = 
             ($datos['lunes'] ?? 0) +
             ($datos['martes'] ?? 0) +
@@ -16,7 +15,7 @@ class EmpresaModelo {
             ($datos['jueves'] ?? 0) +
             ($datos['viernes'] ?? 0);
 
-        // Si NO recibe compensación → la cantidad debe ser NULL
+        // Si NO recibe compensación null
         if ($datos['compensacion'] === 'no') {
             $datos['cantidad_mensual'] = NULL;
         }

@@ -1,4 +1,4 @@
-/* === Estilos optimizados para PDF con tabla muy ancha === */
+
 
 h1 {
     text-align: center;
@@ -11,28 +11,28 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    font-size: 8px;        /* 🔥 MENOS TAMAÑO PARA QUE QUEPA TODO */
-    table-layout: fixed;   /* 🔥 Celdas de tamaño fijo */
+    font-size: 8px;        
+    table-layout: fixed;   
 }
 
 th, td {
     border: 1px solid #333;
-    padding: 3px;          /* 🔥 Menos padding para ganar espacio */
+    padding: 3px;          
     text-align: center;
-    word-wrap: break-word; /* 🔥 Rompe textos largos */
-    white-space: normal;   /* 🔥 Permite salto de línea */
+    word-wrap: break-word; 
+    white-space: normal;   
 }
 
 /* Cabecera */
 th {
     background: #0077cc;
     color: white;
-    font-size: 8px;        /* 🔥 Ajustado igual que el body */
+    font-size: 8px;       
 }
 
 /* Correos y textos largos */
 td.email {
     word-wrap: break-word;
     white-space: normal;
-    font-size: 7px;      /* 🔥 Más pequeño para que no rompa la tabla */
+    font-size: 7px;   
 }

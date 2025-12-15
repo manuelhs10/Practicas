@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'curso_escolar' => $_POST['curso_escolar']
     ];
 
-    // Guardar en la base de datos
     $alta->guardar($datos);
 
     // Enviar correo
@@ -47,13 +46,13 @@ $mail->Encoding = 'base64';
         $mail->Body = "
             Hola <b>{$datos['emp_nombre']}</b>,<br><br>
             Por favor, complete el formulario completo de prácticas:<br><br>
-            <a href='http://localhost/Practicas/src/vistas/form_empresa.php'>Formulario de Empresa</a><br><br>
+            <a href='http://localhost:8080/src/vistas/form_empresa.php'>Formulario de Empresa</a><br><br>
             Gracias.
         ";
 
+
         $mail->send();
 
-        // Redirigir a la vista de éxito
         header("Location: ../vistas/alta_exito.php");
         exit;
 
