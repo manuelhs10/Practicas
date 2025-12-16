@@ -33,8 +33,7 @@ services:
     ports:
       - "8081:80"
     environment:
-      PMA_HOST: mysql           # Deja solo el host, ya que es lo único que necesita para encontrar la BD
-      # Eliminadas las líneas PMA_USER y PMA_PASSWORD para forzar el inicio de sesión manual
+      PMA_HOST: mysql
     depends_on:
       - mysql
 
